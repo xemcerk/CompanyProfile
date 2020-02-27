@@ -1,3 +1,6 @@
 企业数据
 reference
 .ipynb_checkpoints
+chromedriver*
+__pycache__
+.vscode
