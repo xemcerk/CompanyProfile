@@ -4,6 +4,6 @@ reference
 chromedriver*
 __pycache__
 .vscode
-.ipynb
-.pickle
-.json
+*.ipynb
+*.pickle
+*.json
