@@ -7,3 +7,10 @@ __pycache__
 *.ipynb
 *.pickle
 *.json
+*.pdf
+企业导出数据
+zh_stop_words
+*.xls
+*.xlsx
+*.txt
+spider_project
