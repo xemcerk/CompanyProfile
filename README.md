@@ -57,6 +57,8 @@ print(list(test_clc.find({})))
 
 ## 数据字段说明
 
+### 1.集合TechBigData.CompanyProfile
+
 | 字段         | 字段类型 | 字段说明  | 备注                                        |
 | --------------------- | ------ | ------------- | ----------------------------------------------- |
 | staffNumRange | String | varchar(200) | 人员规模 |
@@ -98,3 +100,18 @@ print(list(test_clc.find({})))
 | revokeReason          | String | varchar(500)  | 吊销原因                                        |
 | cancelDate            | Number | 毫秒数        | 注销日期                                        |
 | cancelReason          | String | varchar(500)  | 注销原因                                        |
+| topicVec | list |  | 根据经营范围进行主题建模得到的结果向量 |
+
+### 2. 集合TechBigData.LegalPerson
+
+1.  name：企业名称
+2.  humanName：法人姓名
+3.  items：法人所持有的全部企业的列表
+    1.  regStatus：企业营业状态（可选"开业"、“存续（在营、开业、在册）” 或 ”注销“）
+    2.  estiblishTime：成立时间
+    3.  regCapital：注册资产
+    4.  name：企业名称
+    5.  type：上述法人在公司承担的职务
+    6.  base：地点
+    7.  cid：天眼查中该企业对应id
+4.  total：法人所持有的全部企业的计数
