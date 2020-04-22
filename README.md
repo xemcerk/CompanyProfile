@@ -101,6 +101,7 @@ print(list(test_clc.find({})))
 | cancelDate            | Number | 毫秒数        | 注销日期                                        |
 | cancelReason          | String | varchar(500)  | 注销原因                                        |
 | topicVec | list |  | 根据经营范围进行主题建模得到的结果向量 |
+| is_in_patent_graph | Boolean | | 该企业是否存在于专利图谱中 |
 
 ### 2. 集合TechBigData.LegalPerson
 
