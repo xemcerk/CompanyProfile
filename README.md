@@ -61,6 +61,7 @@ print(list(test_clc.find({})))
 
 | 字段         | 字段类型 | 字段说明  | 备注                                        |
 | --------------------- | ------ | ------------- | ----------------------------------------------- |
+| _id | ObjectId |  | mongodb自动分配的标识 |
 | staffNumRange | String | varchar(200) | 人员规模 |
 | fromTime              | Number | 毫秒数        | 经营开始时间                                    |
 | type                  | Number |               | 法人类型，1 人 2 公司                           |
