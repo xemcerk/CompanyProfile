@@ -1,4 +1,3 @@
-企业数据
 reference
 .ipynb_checkpoints
 chromedriver*
@@ -8,7 +7,6 @@ __pycache__
 *.pickle
 *.json
 *.pdf
-企业导出数据
 zh_stop_words
 *.xls
 *.xlsx
