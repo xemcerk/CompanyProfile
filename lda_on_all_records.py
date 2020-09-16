@@ -14,7 +14,7 @@ cut_docs = [jieba.lcut(doc) for doc in scope_str_list]
 cut_docs = [" ".join(cut_doc) for cut_doc in cut_docs]
 
 # 去停用词
-with open('zh_stop_words\\stop_words.txt','r',encoding='utf-8') as f:
+with open('zh_stop_words/general_stop_words.txt','r',encoding='utf-8') as f:
     stop_words = (f.readlines())
 stop_words = [stop_word.strip('\n') for stop_word in stop_words]
 
