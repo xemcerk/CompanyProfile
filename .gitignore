@@ -10,5 +10,4 @@ __pycache__
 zh_stop_words
 *.xls
 *.xlsx
-*.txt
 spider_project
