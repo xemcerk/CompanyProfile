@@ -14,7 +14,7 @@ import pymongo
 import pandas as pd
 
 # 连接到mongo server
-client = pymongo.MongoClient(host='49.234.215.201')
+client = pymongo.MongoClient(host='49.234.215.201', port=32919)
 
 # 提取数据库TechBigData中 集合CompanyProfile的所有数据
 df = pd.DataFrame(list(client.TechBigData.CompanyProfile.find()))

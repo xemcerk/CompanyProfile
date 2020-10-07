@@ -1,3 +1,4 @@
+# %%
 import pymongo
 import pandas as pd
 import jieba
@@ -5,15 +6,21 @@ from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer, Tf
 import numpy as np
 import re
 
+import sys
+sys.path.append('..')
+
 # 链接mongodb并读取企业经营范围
-client = pymongo.MongoClient(host='49.234.215.201')
+print("链接mongodb并读取企业经营范围")
+client = pymongo.MongoClient(host='49.234.215.201', port=32919)
 cp = client.TechBigData.CompanyProfile
+#%%
 df = pd.DataFrame(list(cp.find({},{"_id":1, "businessScope":1})))
 df = df.dropna()
 scope_str_list = df['businessScope'].to_list()
 id_list = df['_id'].to_list()
-
+#%%
 # 读入经营范围专用stop words, 并进行简单分词与过滤
+print('读入经营范围专用stop words, 并进行简单分词与过滤')
 with open('stop_words/business_stop_words.txt','r') as f:
     business_stop_words = f.read().splitlines()
 all_business_labels = []
@@ -25,8 +32,15 @@ for sample in scope_str_list:
             business_labels.append(token)
     all_business_labels.append(business_labels)
 
+# 去除重复标签
+labels_no_duplicate = []
+for line in all_business_labels:
+    tmp = list(dict.fromkeys(line))
+    labels_no_duplicate.append(tmp)
+
 # 存入数据库
-for i, labels in enumerate(all_business_labels):
+print('存入数据库')
+for i, labels in enumerate(labels_no_duplicate):
     cp.update_one({"_id":id_list[i]},{"$set":{"business_labels":labels}})
 
 # simple tf-idf topic words extraction
